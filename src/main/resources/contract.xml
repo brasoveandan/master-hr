@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="bdir.masterhr.domain.Contract" table="Contract">
+        <id name="usernameEmployee" column="usernameEmployee">
+            <generator class="foreign">
+                <param name="property">employee</param>
+            </generator>
+        </id>
+        <property name="companyName" column="companyName"/>
+        <property name="baseSalary" type="float" column="baseSalary"/>
+        <property name="currency" column="currency"/>
+        <property name="hireDate" column="hireDate"/>
+        <property name="type" column="type">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">bdir.masterhr.domain.enums.ContractType</param>
+                <param name="type">12</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        <property name="expirationDate" column="expirationDate"/>
+        <property name="department" column="department"/>
+        <property name="position" column="position"/>
+        <property name="overtimeIncreasePercent" column="overtimeIncreasePercent"/>
+        <property name="taxExempt" column="taxExempt"/>
+        <property name="ticketValue" column="ticketValue"/>
+        <property name="daysOff" column="daysOff"/>
+
+        <one-to-one name="employee" cascade="all" class="bdir.masterhr.domain.Employee"/>
+    </class>
+</hibernate-mapping>

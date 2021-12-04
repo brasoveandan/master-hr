@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="bdir.masterhr.domain.Request" table="Request">
+        <id name="idRequest" type="java.lang.Integer" column="idRequest">
+            <generator class="identity"/>
+        </id>
+        <property name="usernameEmployee" column="usernameEmployee"/>
+        <property name="description" column="description"/>
+        <property name="status" column="status">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">bdir.masterhr.domain.enums.RequestStatus</param>
+                <param name="type">12</param>
+                <param name="useNamed">true</param>
+            </type>
+        </property>
+        <property name="submittedDate" type="org.hibernate.type.LocalDateType"
+                  column="submittedDate"/>
+        <property name="idTimesheet" column="idTimesheet"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">bdir.masterhr.utils.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:D:/Projects/MasterHRMaven/DatabaseMasterHR</property>
+        <property name="hibernate.jdbc.time_zone">Europe/Bucharest</property>
+        <property name="hibernate.connection.date_class">TEXT</property>
+        <property name="hibernate.connection.date_string_format">yyyy-MM-dd HH:mm</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping resource="employee.xml"/>
+        <mapping resource="contract.xml"/>
+        <mapping resource="payslip.xml"/>
+        <mapping resource="request.xml"/>
+        <mapping resource="holiday.xml"/>
+        <mapping resource="timesheet.xml"/>
+        <mapping resource="clocking.xml"/>
+    </session-factory>
+</hibernate-configuration>

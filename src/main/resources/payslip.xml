@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="bdir.masterhr.domain.Payslip" table="Payslip">
+        <id name="idPayslip" column="idPayslip"/>
+        <property name="usernameEmployee" column="usernameEmployee"/>
+        <property name="year" type="int" column="year"/>
+        <property name="month" type="int" column="month"/>
+        <property name="grossSalary" type="float" column="grossSalary"/>
+        <property name="netSalary" type="float" column="netSalary"/>
+        <property name="workedHours" type="float" column="workedHours"/>
+        <property name="homeOfficeHours" type="float" column="homeOfficeHours"/>
+        <property name="requiredHours" type="float" column="requiredHours"/>
+        <property name="increases" type="float" column="increases"/>
+        <property name="overtimeIncreases" type="float" column="overtimeIncreases"/>
+        <property name="ticketsValue" type="float" column="ticketsValue"/>
+
+    </class>
+</hibernate-mapping>
